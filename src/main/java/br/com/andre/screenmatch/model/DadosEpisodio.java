@@ -1,2 +1,13 @@
-package br.com.andre.screenmatch.model;public record DadosEpisodio() {
+package br.com.andre.screenmatch.model;
+
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
+public record DadosEpisodio(@JsonAlias("Title") String titulo,
+                            @JsonAlias("Episode") Integer numeroEpisodio,
+                            @JsonAlias("imdbRating") String avaliacao,
+                            @JsonAlias("Released") String DataLancamento) {
+
 }
+
